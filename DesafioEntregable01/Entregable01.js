@@ -48,13 +48,12 @@ class Product {
     this.stock = stock
   }
 }
-const productManager = new ProductManager()
+/*const productManager = new ProductManager()
 console.log(productManager.getProducts())
 productManager.addProduct(new Product("Producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25))
 productManager.addProduct(new Product("Producto prueba 2", "Este es un producto prueba 2", 200, "Sin imagen 2", "def123", 25))
 console.log(productManager.getProducts())
-console.log("--------------------");
-console.log(productManager.getProductById(1))
+console.log(productManager.getProductById(1))*/
 
 
 
