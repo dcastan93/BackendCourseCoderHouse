@@ -1,0 +1,10 @@
+{ 
+  "type": "module",
+  "name": "archivosSync.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "archivosSync.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
