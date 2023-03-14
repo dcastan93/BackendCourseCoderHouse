@@ -25,7 +25,7 @@ export class ProductManager {
     return arrayWithLimit
   }
   async addProduct(product) {
-    let id = 0
+    let id = 0/home/dcastan93/BackendCourseCoderHouse/clasesCoder/clase08
     await this.loadProduct()
     if (ProductManager.productList.length) {
       let storesCodes = []
