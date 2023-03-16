@@ -25,26 +25,10 @@ export class ProductManager {
     return arrayWithLimit
   }
   async addProduct(product) {
-    let id = 0/home/dcastan93/BackendCourseCoderHouse/clasesCoder/clase08
     await this.loadProduct()
-    if (ProductManager.productList.length) {
-      let storesCodes = []
-
-      for (const i of ProductManager.productList) {
-        storesCodes.push(i.code)
-        id = i.id + 1
-      }
-      if (storesCodes.includes(product.code)) {
-        console.log("ERROR: codigo repetido, modifiquelo")
-      } else {
-        product["id"] = id
-        ProductManager.productList.push(product)
-      }
-    } else {
-      product["id"] = id
-      ProductManager.productList.push(product)
-    }
+    ProductManager.productList.push(product)
     await this.saveProduct()
+    return product
   }
   async getProductById(id) {
     await this.loadProduct()
@@ -54,15 +38,16 @@ export class ProductManager {
     }
     return findById
   }
-  async updateProduct(id, item, value) {
-    const name = item
+  async updateProduct(id,  newValue) {
     await this.loadProduct()
-    for (const i of ProductManager.productList) {
-      if (i.id === id) {
-        i[name] = value
-      }
+    const idLooked = ProductManager.productList.findIndex(c => c.id === id)
+    console.log(idLooked);
+    if(idLooked === -1){
+      throw new Error("id not find")
     }
+    ProductManager.productList[idLooked] = newValue
     await this.saveProduct()
+    return newValue
   }
   async deleteProduct(id) {
     await this.loadProduct()

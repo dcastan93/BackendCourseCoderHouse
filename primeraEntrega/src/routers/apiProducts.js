@@ -16,14 +16,43 @@ apiProducts.get("/", async (req, res) => {
  apiProducts.get("/:id", async (req, res) => { 
   res.json(await productManager.getProductById(parseInt(req.params["id"])))
  })
-apiProducts.post("/newProduct", async (req, res, next) => { 
-  /*const product = new Product({
-    id: randomUUID(),
-    ...req.body
-  })*/
-  console.log(req.body)
+apiProducts.post("/", async (req, res, next) => { 
+  try {
+	  const product = new Product({
+      id: randomUUID(),
+	    ...req.body
+	  })
+    const newProduct = await productManager.addProduct(product)
+    res.json(newProduct)
+  } catch (error) {
+	next(error)
+  }
  });
 
+apiProducts.put("/:pid", async (req, res, next) => { 
+  let productToModify
+  try {
+	productToModify = new Product({
+	    id: req.params.pid,
+	    ...req.body
+	  })
+  } catch (error) {
+    next(error)	
+    return
+  }
+  try {
+	  const modifiedProduct =  productManager.updateProduct(req.params.pid, productToModify)
+	  res.json(modifiedProduct)
+  } catch (error) {
+    next(error)
+  }
+});
 
-apiProducts.put("/", (req, res) => { res.json(); });
-apiProducts.delete("/", (req, res) => { res.json(); });
+apiProducts.delete("/:pid", async (req, res, next) => { 
+  try {
+	  const productToDelete = await productManager.deleteProduct(req.params.pid)
+	  res.json(productToDelete)
+} catch (error) {
+	next(error)
+}
+});

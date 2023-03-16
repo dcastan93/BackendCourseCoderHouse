@@ -1,12 +1,13 @@
 export class Product {
-  constructor(title, description, price, thumbnail, code, stock) {
-    if (!id) throw new Error('falta un argumento')
-    if (!title) throw new Error('falta un argumento')
-    if (!description) throw new Error('falta un argumento')
-    if (!price) throw new Error('falta un argumento')
-    if (!thumbnail) throw new Error('falta un argumento')
-    if (!code) throw new Error('falta un argumento')
-    if (!stock) throw new Error('falta un argumento')
+  constructor({id, title, description, price, thumbnail, code, stock}) {
+    if (!id) throw new Error('Id missing')
+    if (!title) throw new Error('title missing')
+    if (!description) throw new Error('description missing')
+    if (!price) throw new Error('price missing')
+    if (!thumbnail) throw new Error('thumbnail missing')
+    if (!code) throw new Error('code missing')
+    if (!stock) throw new Error('stock missing')
+    this.id = id;
     this.title = title;
     this.description = description;
     this.price = price;
