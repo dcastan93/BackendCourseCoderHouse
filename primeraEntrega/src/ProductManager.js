@@ -74,23 +74,3 @@ export class ProductManager {
     await this.saveProduct()
   }
 }
-
-class Product {
-  constructor(title, description, price, thumbnail, code, stock) {
-    this.title = title
-    this.description = description
-    this.price = price
-    this.thumbnail = thumbnail
-    this.code = code
-    this.stock = stock
-  }
-}
-/*const productManager = new ProductManager("./static/products.txt")
-await productManager.getProducts()
-await productManager.addProduct(new Product("Producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25))
-await productManager.getProducts()
-await productManager.getProductById(0)
-await productManager.updateProduct(0, "title", "producto prueba 2")
-await productManager.getProducts()
-await productManager.deleteProduct(0)
-productManager.getProducts()*/
