@@ -6,13 +6,17 @@ import { Product } from "../Product.js";
 export const apiProducts = Router();
 const productManager = new ProductManager("./static/products.txt")
 
-apiProducts.get("/", async (req, res) => { 
-  if (req.query.limit !== undefined){
-    res.json(await productManager.getNProducts(parseInt(req.query.limit)))
-  }else{
-    res.json(await productManager.getProducts())
+apiProducts.get("/", async (req, res, next) => { 
+  try {
+    if (req.query.limit !== undefined){
+        res.json(await productManager.getNProducts(parseInt(req.query.limit)))
+      }else{
+        res.json(await productManager.getProducts())
+      }
+  } catch (error) {
+  next(error)
   }
- })
+})
  apiProducts.get("/:id", async (req, res) => { 
   res.json(await productManager.getProductById(parseInt(req.params["id"])))
  })
@@ -27,7 +31,7 @@ apiProducts.post("/", async (req, res, next) => {
   } catch (error) {
 	next(error)
   }
- });
+});
 
 apiProducts.put("/:pid", async (req, res, next) => { 
   let productToModify

@@ -38,12 +38,23 @@ export class ProductManager {
     }
     return findById
   }
+  async exportProductByIdForCarts(id) {
+    await this.loadProduct()
+    const findById =  ProductManager.productList.find(c => c.id === id)
+    if (!findById) {
+     throw new Error("id not find")
+    }
+    return {
+      id: findById.id,
+      quantity: findById.stock
+    }
+  }
   async updateProduct(id,  newValue) {
     await this.loadProduct()
     const idLooked = ProductManager.productList.findIndex(c => c.id === id)
     console.log(idLooked);
     if(idLooked === -1){
-      throw new Error("id not find")
+      throw new Error("id not found")
     }
     ProductManager.productList[idLooked] = newValue
     await this.saveProduct()
