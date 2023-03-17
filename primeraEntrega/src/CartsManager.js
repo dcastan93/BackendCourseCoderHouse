@@ -45,7 +45,6 @@ export class CartsManager {
       throw new Error("id not find")
     }
     const pidLooked = CartsManager.cartsProductList[idLooked].products.findIndex(c => c.id === pid)
-    console.log(pidLooked)
     if(pidLooked !== -1){
       CartsManager.cartsProductList[idLooked].products[pidLooked].quantity += 1
     }else{

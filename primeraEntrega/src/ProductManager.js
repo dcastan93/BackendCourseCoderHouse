@@ -62,7 +62,6 @@ export class ProductManager {
   async updateProduct(id,  newValue) {
     await this.loadProduct()
     const idLooked = ProductManager.productList.findIndex(c => c.id === id)
-    console.log(idLooked);
     if(idLooked === -1){
       throw new Error("id not found")
     }

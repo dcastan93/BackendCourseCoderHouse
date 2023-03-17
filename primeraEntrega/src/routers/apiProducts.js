@@ -18,7 +18,6 @@ apiProducts.get("/", async (req, res, next) => {
   }
 })
 apiProducts.get("/:id", async (req, res, next) => { 
-  console.log(req.params)
   try {
 	  res.json(await productManager.getProductById((req.params["id"])))
   } catch (error) {
@@ -31,7 +30,6 @@ apiProducts.post("/", async (req, res, next) => {
       id: randomUUID(),
 	    ...req.body
 	  })
-    console.log(product);
     const newProduct = await productManager.addProduct(product)
     res.json(newProduct)
   } catch (error) {
