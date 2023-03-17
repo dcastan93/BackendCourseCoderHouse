@@ -38,14 +38,19 @@ export class CartsManager {
     }
     return findById.products
   }
-  async updateCartProduct(id,  newValue) {
+  async updateCartProduct(id, pid,  newValue) {
     await this.loadCartsProduct()
     const idLooked = CartsManager.cartsProductList.findIndex(c => c.id === id)
     if(idLooked === -1){
       throw new Error("id not find")
     }
-    console.log(CartsManager.cartsProductList[idLooked])
-    CartsManager.cartsProductList[idLooked].products.push(newValue)
+    const pidLooked = CartsManager.cartsProductList[idLooked].products.findIndex(c => c.id === pid)
+    console.log(pidLooked)
+    if(pidLooked !== -1){
+      CartsManager.cartsProductList[idLooked].products[pidLooked].quantity += 1
+    }else{
+      CartsManager.cartsProductList[idLooked].products.push(newValue)
+    }
     await this.saveCartsProduct()
     return newValue
   }

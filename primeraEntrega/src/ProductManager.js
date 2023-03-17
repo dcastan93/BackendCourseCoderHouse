@@ -26,7 +26,17 @@ export class ProductManager {
   }
   async addProduct(product) {
     await this.loadProduct()
-    ProductManager.productList.push(product)
+    if (ProductManager.productList.length) {
+      let storesCodes = []
+      for (const i of ProductManager.productList) {
+        storesCodes.push(i.code)
+      }
+      if (storesCodes.includes(product.code)) {
+        console.log("ERROR: codigo repetido, modifiquelo")
+      } else {
+        ProductManager.productList.push(product)
+      }
+    }
     await this.saveProduct()
     return product
   }
@@ -46,7 +56,7 @@ export class ProductManager {
     }
     return {
       id: findById.id,
-      quantity: findById.stock
+      quantity: 1
     }
   }
   async updateProduct(id,  newValue) {

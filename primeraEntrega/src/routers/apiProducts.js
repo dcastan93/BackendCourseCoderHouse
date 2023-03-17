@@ -17,15 +17,21 @@ apiProducts.get("/", async (req, res, next) => {
   next(error)
   }
 })
- apiProducts.get("/:id", async (req, res) => { 
-  res.json(await productManager.getProductById(parseInt(req.params["id"])))
- })
+apiProducts.get("/:id", async (req, res, next) => { 
+  console.log(req.params)
+  try {
+	  res.json(await productManager.getProductById((req.params["id"])))
+  } catch (error) {
+    next(error)
+  }
+})
 apiProducts.post("/", async (req, res, next) => { 
   try {
 	  const product = new Product({
       id: randomUUID(),
 	    ...req.body
 	  })
+    console.log(product);
     const newProduct = await productManager.addProduct(product)
     res.json(newProduct)
   } catch (error) {
@@ -36,7 +42,7 @@ apiProducts.post("/", async (req, res, next) => {
 apiProducts.put("/:pid", async (req, res, next) => { 
   let productToModify
   try {
-	productToModify = new Product({
+	  productToModify = new Product({
 	    id: req.params.pid,
 	    ...req.body
 	  })
@@ -46,7 +52,7 @@ apiProducts.put("/:pid", async (req, res, next) => {
   }
   try {
 	  const modifiedProduct =  productManager.updateProduct(req.params.pid, productToModify)
-	  res.json(modifiedProduct)
+	  res.send("the product was modified")
   } catch (error) {
     next(error)
   }

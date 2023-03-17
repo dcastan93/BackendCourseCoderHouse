@@ -40,7 +40,7 @@ apiCarts.post("/", async (req, res, next) => {
 apiCarts.post("/:cid/product/:pid", async (req, res, next) => { 
   try {
     const product = await productManager.exportProductByIdForCarts(req.params.pid)
-    const newProductToCarts = await cartManager.updateCartProduct(req.params.cid, product)
+    const newProductToCarts = await cartManager.updateCartProduct(req.params.cid, req.params.pid, product)
     res.json(newProductToCarts)
   } catch (error) {
 	next(error)

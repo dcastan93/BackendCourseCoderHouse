@@ -1,21 +1,14 @@
 [
   {
-    "title": "Audifonos BEat",
+    "id": "2",
+    "title": "Reloj Bulova",
     "description": "Este es un producto prueba",
-    "price": 150,
+    "price": 50,
     "thumbnail": "Sin imagen",
-    "code": "abc000",
-    "stock": 25,
-    "id": "0"
-  },
-  {
-    "title": "Detector de monoxido",
-    "description": "Este es un producto prueba",
-    "price": 5,
-    "thumbnail": "Sin imagen",
-    "code": "abc002",
-    "stock": 21,
-    "id": "2"
+    "code": "3215",
+    "stock": 13,
+    "status": "true",
+    "category": "reloj de marca y alggunas otras cosas más"
   },
   {
     "title": "Taladro Dewalt",
@@ -97,5 +90,38 @@
     "thumbnail": "Sin imagen",
     "code": "18wrtg",
     "stock": 12
+  },
+  {
+    "id": "5",
+    "title": "Reloj Bulova",
+    "description": "Este es un producto prueba",
+    "price": 50,
+    "thumbnail": "Sin imagen",
+    "code": "abc005",
+    "stock": 13,
+    "status": "true",
+    "category": "reloj de marca"
+  },
+  {
+    "id": "745c1eb8-1e09-4158-ba40-800ca4ba5959",
+    "title": "Reloj Bulova",
+    "description": "Este es un producto prueba",
+    "price": 50,
+    "thumbnail": "Sin imagen",
+    "code": "abc005",
+    "stock": 13,
+    "status": "true",
+    "category": "reloj de marca"
+  },
+  {
+    "id": "2f297afa-b500-491f-a86e-91377fadc80e",
+    "title": "Reloj Bulova",
+    "description": "Este es un producto prueba",
+    "price": 50,
+    "thumbnail": "Sin imagen",
+    "code": "abc0045685",
+    "stock": 13,
+    "status": "true",
+    "category": "reloj de marca"
   }
 ]
