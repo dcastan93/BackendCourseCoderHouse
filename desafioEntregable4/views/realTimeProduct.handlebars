@@ -1,0 +1,14 @@
+{{#if noEmptyList}}
+<h4>Products</h4>
+<ul>
+    {{#each productList}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{else}}
+<p class="text-danger"> Empty list...</p>
+{{/if}}
+
+<button id="btnPresioname">presioname</button>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

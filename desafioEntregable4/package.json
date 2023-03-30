@@ -3,7 +3,7 @@
   "name": "desafioEntregable4",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "src/servidor.js",
   "scripts": {
     "start": "node .",
     "test": "nodemon -e 'js,html' ."
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.2"
+    "express-handlebars": "^7.0.2",
+    "socket.io": "^4.6.1"
   }
 }

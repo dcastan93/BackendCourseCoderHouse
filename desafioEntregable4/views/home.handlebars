@@ -1,0 +1,12 @@
+<h1> Products is showed below </h1>
+
+{{#if noEmptyList}}
+<h4>Products</h4>
+<ul>
+    {{#each productList}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{else}}
+<p class="text-danger"> Empty list...</p>
+{{/if}}
