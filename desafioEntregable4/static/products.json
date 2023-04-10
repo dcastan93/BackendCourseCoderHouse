@@ -17,9 +17,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc003",
     "stock": 65,
-    "id": "3",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "3"
   },
   {
     "title": "Purificador de aire para el hogar",
@@ -28,9 +26,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc004",
     "stock": 35,
-    "id": "4",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "4"
   },
   {
     "title": "Reloj Bulova",
@@ -39,9 +35,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc005",
     "stock": 13,
-    "id": "5",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "5"
   },
   {
     "title": "MAquina expresso Mr.Coffe",
@@ -50,9 +44,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc006",
     "stock": 25,
-    "id": "6",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "6"
   },
   {
     "title": "Kit de aseo para perros Afloia",
@@ -61,9 +53,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc007",
     "stock": 10,
-    "id": "7",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "7"
   },
   {
     "title": "Soporte con inclinación para televisión para montaje en pared Dream",
@@ -72,9 +62,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc008",
     "stock": 5,
-    "id": "8",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "8"
   },
   {
     "title": "Maleta Delsey",
@@ -83,9 +71,7 @@
     "thumbnail": "Sin imagen",
     "code": "abc009",
     "stock": 24,
-    "id": "9",
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "id": "9"
   },
   {
     "id": "10",
@@ -94,9 +80,7 @@
     "price": 12,
     "thumbnail": "Sin imagen",
     "code": "178wrtg",
-    "stock": 12,
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "stock": 12
   },
   {
     "id": "7df3191d-db3f-40b6-9da1-be337516f218",
@@ -105,9 +89,7 @@
     "price": 12,
     "thumbnail": "Sin imagen",
     "code": "18wrtg",
-    "stock": 12,
-    "status": "true",
-    "category": "reloj de marca y alggunas otras cosas más"
+    "stock": 12
   },
   {
     "id": "5",
