@@ -1,4 +1,3 @@
 npm init -y
-npm i express
+npm i express mongoose express-handlebars multer
 npm i -D @types/express
-npm i mongoose express-handlebars multer
