@@ -1,3 +1,5 @@
+const socket = io()
+
 const formCargarVideojuego = document.querySelector("#formCargarVideojuego")
 
 if (formCargarVideojuego instanceof HTMLFormElement) {
@@ -15,3 +17,7 @@ if (formCargarVideojuego instanceof HTMLFormElement) {
     })
   })
 }
+
+socket.on("videojuegos", data => {
+  alert("recibi los videojuegos:" + JSON.stringify(data))
+})

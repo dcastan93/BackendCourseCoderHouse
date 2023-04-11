@@ -1,8 +1,27 @@
 import express from "express"
 import { PORT } from "../config/servidor.config.js"
 import { engine } from "express-handlebars"
+import { routerApi } from "../routers/api.router.js"
+import { routerVistas } from "../routers/views.router.js"
+import { conectar } from "../database/mongoose.js"
+import { videojuegosManager } from "../managers/videojuegos.manages.js"
+import { Server } from "socket.io"
 
+await conectar()
 const app = express()
+const server = app.listen(PORT, () => {
+  console.log(`escuchando en puerto ${PORT}`);
+})
+
+const io = new Server(server)
+/*io.on("connection", async socket => {
+  socket.emit("videojuegos", await videojuegosManager.obtenerTodos())
+})*/
+app.use((req, res, next)=>{
+  req["io"] = io
+  next()
+})
+
 app.engine("handlebars", engine())
 app.set("views", "./views")
 app.set("view engine", "handlebars")
@@ -10,18 +29,6 @@ app.set("view engine", "handlebars")
 app.use(express.static("./public"))
 app.use(express.json())
 
-app.get("/", (req, res, next) => {
-  res.redirect("/videojuegos")
-})
-app.get("/videojuegos", (req, res, next) => {
-  res.render("cargaVideojuegos", { pageTitle: "Videojuegos"})
-})
+app.use("/api", routerApi)
+app.use("/", routerVistas)
 
-app.post("/api/videojuegos", (req, res, next) => {
-  console.log(req.body)
-  res.send("ok")
-})
-
-app.listen(PORT, () => {
-  console.log(`escuchando en puerto ${PORT}`);
-})
