@@ -1,0 +1,23 @@
+<form id="formCargarVideojuego">
+  <label  for= "input_nombre">Nombre</label> <input id="input_nombre" name="nombre" type="text" placeholder="ingrese nombre"> <br>
+  <label  for= "input_genero">Genero</label> <input id="input_genero" name="genero" type="text" placeholder="ingrese genero"> <br>
+  <label  for= "input_plataforma">Plataforma</label> <input id="input_plataforma" name="plataforma" type="text" placeholder="ingrese plataforma"> <br>
+
+  <button type="submit"> Guardar </button>
+</form>
+
+
+<h2>Listado de juegos disponibles</h2>
+{{#if hayVideojuegos}}
+<ul>
+{{#each videojuegos}}
+<li>nombre: {{this.nombre}} | genero: {{this.genero}} | plataforma: {{this.plataforma}}</li>
+{{/each}}
+{{else}}
+</ul>
+<p>no hay videojuegos</p>
+{{/if}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cargaVideojuegos.js"></script>
+

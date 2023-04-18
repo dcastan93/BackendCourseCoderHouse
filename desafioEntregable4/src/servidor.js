@@ -40,11 +40,17 @@ app.get('/', async (req, res, next) => {
 })
 
 const httpServer = app.listen(8080, () =>
-  console.log('Example app listening on port 8080!'),
+  console.log('App listening on port 8080!'),
 );
+
 const io = new SocketIOServer(httpServer)
 
-io.on("connection", async clientSocket => {
+io.on("connection", (socket) => {
+  socket.emit("hello", "world");
+});
+
+/*io.on("connection",  serverSocket => {
+
   let productList = []
     let objetoToArray = {}
     try {
@@ -60,5 +66,5 @@ io.on("connection", async clientSocket => {
     }
   
   
-})
+})*/
 

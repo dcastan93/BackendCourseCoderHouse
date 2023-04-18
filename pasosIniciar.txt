@@ -1,3 +1,4 @@
 npm init -y
 npm i express mongoose express-handlebars multer
 npm i -D @types/express
+npm i socket.io
